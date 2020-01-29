@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CalculatorTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2020-01-29T14:40:21" hostname="ngwako-Inspiron-15-3567" time="0.025">
+  <properties/>
+  <testcase name="testExpectedExceptionWithSuperType()" classname="CalculatorTest" time="0.011"/>
+  <testcase name="handleIntegersPassedAsStrings()" classname="CalculatorTest" time="0.002"/>
+  <testcase name="delimeterOfAnyLength()" classname="CalculatorTest" time="0.001"/>
+  <testcase name="handleMultipleIntegers()" classname="CalculatorTest" time="0.001"/>
+  <testcase name="ignoreIntegerMoreThan1000()" classname="CalculatorTest" time="0.001"/>
+  <testcase name="handleNewLines()" classname="CalculatorTest" time="0.001"/>
+  <testcase name="handleDifferentDelimeter()" classname="CalculatorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
