@@ -1,11 +1,10 @@
-import java.util.Arrays;
 import java.util.regex.*;
 public class Calculator {
 
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
         try {
-            System.out.println(add("//***\n1***2***3"));
+            System.out.println(add("1,2,3//;\n1000,1;2"));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -14,9 +13,6 @@ public class Calculator {
 
 
     public static int add(String SumNum) throws Exception {
-
-//          Pattern p = Pattern.compile("[0-9]");
-//          Matcher m = p.matcher(SumNum);
 
 
         if (SumNum.isEmpty()) {
@@ -30,11 +26,29 @@ public class Calculator {
             delimeter = parts[0].substring(2);
             SumNum = parts[1];
         }
-
-
+        delimeter = delimeter.replace("\\","\\\\");
+        delimeter = delimeter.replace("-","\\-");
         String[] numbers = SumNum.split("["+delimeter+"]+");//store strings separated by comma and new line in the array
-        StringBuilder negative = new StringBuilder();
 
+
+
+
+
+            if(SumNum.startsWith(" ")) {
+                throw new Exception("ERROR: invalid input");
+            }
+
+            if(!SumNum.startsWith("//")&& SumNum.contains("//")){
+                throw new Exception("ERROR: invalid input ");
+            }
+            if(!Pattern.compile("[0-9]").matcher(SumNum.substring(SumNum.length()-1)).matches()){
+                throw new Exception("ERROR: invalid input");
+            }
+
+
+
+
+        StringBuilder negative = new StringBuilder();
 
         for (String a : numbers) {
             if (Integer.parseInt(a) < 0) {
@@ -43,8 +57,6 @@ public class Calculator {
             if (a.equals(numbers[numbers.length - 1]) && (negative.length() > 0)) {
                 throw new Exception("ERROR: negatives not allowed " + negative);
             }
-
-
 
             }
             int sum = 0;
